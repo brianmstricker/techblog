@@ -21,14 +21,14 @@ const MobileMenu = () => {
   };
  }, [showMenu]);
  return (
-  <div className="sm:hidden absolute right-4 mt-[2px]">
+  <div className="sm:hidden absolute right-4 mt-1.5">
    <Button variant={"ghost"} className="group" onClick={() => setShowMenu(true)}>
     <Menu className="group-active:scale-[1.15] group-active:stroke-emerald-500 transition-[scale_stroke]" />
    </Button>
    <div
     ref={menuRef}
     className={cn(
-     "fixed sm:hidden top-0 right-[600px] bg-background border-l h-screen scale-0 opacity-0 w-[80%] transition-[scale_opacity_right] duration-300 ease-in-out z-50",
+     "fixed sm:hidden top-0 right-[600px] bg-background border-l h-screen scale-0 opacity-0 w-[240px] transition-[scale_opacity_right] duration-300 ease-in-out z-50",
      showMenu && "scale-100 opacity-100 right-0"
     )}
    >
