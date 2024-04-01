@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
+import Header from "@/components/Header";
+import LeftSidebar from "@/components/LeftSidebar";
 
-const font = Inter({ subsets: ["latin"] });
+const font = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
- title: "TechE",
+ title: "techie",
  description: "Blog app",
 };
 
@@ -17,10 +19,14 @@ export default function RootLayout({
  children: React.ReactNode;
 }>) {
  return (
-  <html lang="en">
-   <body className={cn("min-h-screen antialiased", font.className)}>
+  <html lang="en" suppressHydrationWarning>
+   <body className={cn("min-h-screen antialiased flex flex-col", font.className)}>
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-     {children}
+     <Header />
+     <div className="flex-1 flex">
+      <LeftSidebar />
+      <div className="contain">{children}</div>
+     </div>
     </ThemeProvider>
    </body>
   </html>
