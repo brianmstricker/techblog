@@ -25,7 +25,7 @@ export default function RootLayout({
      <Header />
      <div className="flex-1 flex">
       <LeftSidebar />
-      <div className="px-4 flex-1">{children}</div>
+      <div className="px-6 flex-1 pb-10">{children}</div>
      </div>
     </ThemeProvider>
    </body>
