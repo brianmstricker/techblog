@@ -20,9 +20,9 @@ const userOptions = [
  },
 ];
 
-const UserButtons = () => {
+const UserButtons = ({ col, className }: { col?: boolean; className?: string }) => {
  return (
-  <div className="flex justify-between px-3 mt-3 text-muted-light text-sm">
+  <div className={cn("flex justify-between px-3 mt-3 text-muted-light text-sm", col && "flex-col w-fit", className && className)}>
    {userOptions.map((option) => (
     <button
      key={option.text}
@@ -34,7 +34,7 @@ const UserButtons = () => {
       option.text === "Share" && "hover:bg-violet-600/20 focus:bg-violet-600/20"
      )}
     >
-     <span className="absolute opacity-0 left-1/2 -translate-x-1/2 bg-background border py-1.5 px-4 group-hover:opacity-100 transition-[opacity_top] duration-300 top-8 group-hover:-top-9 scale-0 group-hover:scale-100 group-focus:opacity-100 group-focus:scale-100 group-focus:-top-9 pointer-events-none select-none">
+     <span className="absolute opacity-0 left-1/2 -translate-x-1/2 bg-background border py-1.5 px-4 group-hover:opacity-100 transition-[opacity_top] duration-300 top-0 group-hover:-top-9 scale-0 group-hover:scale-100 group-focus:opacity-100 group-focus:scale-100 group-focus:-top-9 pointer-events-none select-none">
       {option.text}
      </span>
      {option.text === "Upvote" ? (

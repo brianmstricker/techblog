@@ -6,7 +6,7 @@ import MobileMenu from "./MobileMenu";
 
 const Header = () => {
  return (
-  <div className="py-2 bg-background/80 sticky top-0 backdrop-blur border-b shadow-lg shadow-black/10 z-10">
+  <div className="py-2 bg-background/80 sticky top-0 backdrop-blur border-b shadow-md shadow-black/5 dark:shadow-white/5 z-10">
    <div className="flex justify-center sm:justify-between items-center px-4 mx-auto">
     <Link href="/" className="text-[2rem] sm:text-[2.5rem] font-bold tracking-wider">
      <span className="text-emerald-500">tec</span>hie
